@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
+import TrendingProducts from '../components/TrendingProducts';
+
 export default function Home() {
   return (
     <div style={styles.wrapper}>
@@ -28,6 +30,7 @@ export default function Home() {
       </header>
 
       <main style={styles.main}>
+        <TrendingProducts />
         <section>
           <h2 style={styles.sectionTitle}>🚀 Trending Guides</h2>
           <ul style={styles.articleList}>
