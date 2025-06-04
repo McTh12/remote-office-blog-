@@ -1,0 +1,30 @@
+import { useRouter } from 'next/router';
+import Head from 'next/head';
+import Link from 'next/link';
+
+export default function Search() {
+  const router = useRouter();
+  const { q } = router.query;
+
+  return (
+    <div style={styles.container}>
+      <Head>
+        <title>Search Results for "{q}"</title>
+      </Head>
+      <h1 style={styles.title}>Search Results</h1>
+      <p style={styles.subtitle}>You searched for: <strong>{q}</strong></p>
+
+      <div style={styles.results}>
+        <Link href="/articles/best-office-chairs" legacyBehavior>
+          <a style={styles.card}>🪑 View Best Office Chairs</a>
+        </Link>
+        <Link href="/articles/tools-under-50" legacyBehavior>
+          <a style={styles.card}>⏱️ View Tools Under £50</a>
+        </Link>
+        <Link href="/articles/desk-accessories" legacyBehavior>
+          <a style={styles.card}>💡 View Desk Accessories</a>
+        </Link>
+      </div>
+    </div>
+  );
+}
